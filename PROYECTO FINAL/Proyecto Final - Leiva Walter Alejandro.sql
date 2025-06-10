@@ -707,9 +707,8 @@ INNER JOIN marca ON inventario.Id_Marca = marca.Id_Marca;
 -- Prueba de la Vista --
 SELECT*FROM Detalle_Preventivo;
 
--- VISTA DETALLADA DE PREVENTIVOS CON VENCIMIENTO --
--- A la vista anterior, le podemos agregar el vencimiento de los mantenimientos preventivos.
--- Para ello, se crea la siguiente vista modificada
+-- LA VISTA ANTERIOR SE PUEDE MODIFICAR, AGREGANDO LA FECHA DE VENCIMIENTO DE LOS PREVENTIVOS
+-- QUEDANDO DE ESTA FORMA
 
 CREATE VIEW Preventivo_Detallado_Con_Vencimiento AS
 SELECT
@@ -728,11 +727,6 @@ preventivos.Observaciones
 FROM inventario
 INNER JOIN preventivos ON inventario.Id_Inventario = preventivos.Id_Inventario
 INNER JOIN marca ON inventario.Id_Marca = marca.Id_Marca;
-
-
--- Prueba de la Vista --
-SELECT*FROM Preventivo_Detallado_Con_Vencimiento;
-
 
 -- VISTA CANTIDAD DE FALLAS SEGUN TIPO DE FALLA --
 -- Esta vista tiene la finalidad de mostrar cual es el mayor tipo de falla que más predomina --
